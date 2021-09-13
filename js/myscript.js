@@ -6,7 +6,7 @@ function printInHtml(array,temporanyPrintf){
     array.forEach(element => {
         const {name, prefix, type, family, color} = element;
         printArray +=
-        `<div class="col-12">
+        `<div class="row-cols-1 row-cols-sm-3 row-cols-md-5">
             <i class="${family} ${prefix}${name}" style=color:${color}></i>
             <h4>${name}</h4>
         </div>
@@ -43,8 +43,7 @@ function newArrayColorized(array,types){
 function addOptions(types){
     types.forEach((element) =>{
         document.querySelector("#my_select").innerHTML +=
-        `<option value="${element[type]}">${element[type]}</option>`;
-        console.log(element[type]);
+        `<option value="${element}">${element}</option>`;
     });
 }
 
@@ -150,8 +149,21 @@ const icons = [
 let printHTML = document.querySelector("#container-icons");
 const types = arrayTypesFilter(icons);
 const newArrayIcons = newArrayColorized(icons,types);
-printInHtml(newArrayIcons,printHTML);
 addOptions(types);
-addEventListener("change", ()=>{
+printInHtml(newArrayIcons,printHTML);
 
+
+addEventListener("change", ()=>{
+    const filterdArray = document.querySelector("#my_select").value;
+    const newFilteredArray = newArrayIcons.filter((element) => {
+        return (filterdArray == element.type);
+    });
+    if(filterdArray == "all"){
+        printInHtml(newArrayIcons,printHTML);
+    } else{
+        printInHtml(newFilteredArray,printHTML);
+
+    }
+
+    // console.log(newFilteredArray);
 });

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+body{
+    background-color: #dddddd;
+}
+
+.bg-skyblue{
+    background-color: #29b1dd;
+    padding: 20px;
+}
+
+.bg-skyblue span{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.box-icons{
+    padding: 12px;
+    font-size: 2.2rem;
+    text-align: center;
+    border: 1px solid #dddddd59;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 2px 2px darkgray;
+    max-width: 250px;
+}
+
+#title{
+    font-family: "acme";
+    color: #29b1dd;
+    padding: 0 20px;
+    margin: 0;
+    background-color: white;
+}
+
+#my_select{
+    width: 100px;
+    height: 20px;
+    font-size: 0.8rem;
+}

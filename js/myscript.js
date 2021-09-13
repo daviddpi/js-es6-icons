@@ -6,11 +6,10 @@ function printInHtml(array,temporanyPrintf){
     array.forEach(element => {
         const {name, prefix, type, family, color} = element;
         printArray +=
-        `<div class="row-cols-1 row-cols-sm-3 row-cols-md-5">
+        `<div class="col g-5 m-3 box-icons">
             <i class="${family} ${prefix}${name}" style=color:${color}></i>
             <h4>${name}</h4>
-        </div>
-        `;
+        </div>`;
     });
     temporanyPrintf.innerHTML = printArray;
 }
